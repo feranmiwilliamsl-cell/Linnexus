@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>What We Do Linnexus Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="cur-dot"></div>
+  <div class="cur-ring"></div>
+  <canvas id="particles"></canvas>
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+  <nav class="nav" id="nav">
+    <div class="nav-in">
+      <a href="index.html" class="logo"><img src="images/logo.png" class="logo-img" alt="Linnexus" /><span
+          class="logo-text">LINNEXUS</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">Who We Are</a></li>
+        <li><a href="services.html" class="active">What We Do</a></li>
+        <li><a href="approach.html">Our Approach</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Who We Are</a></li>
+      <li><a href="services.html">What We Do</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <section class="phero">
+    <div class="phero-photo" style="background-image:url('images/services-technology.jpg')"></div>
+    <div class="phero-grad"></div>
+    <div class="phero-grid"></div>
+    <div class="wrap">
+      <div class="eyebrow teal fade-up">What We Do</div>
+      <h1 class="fade-up d1">Everything You Need to<br /><span class="accent">Lead with AI</span></h1>
+      <p class="fade-up d2">From educating the next generation to governing enterprise level AI systems, our services
+        address the full spectrum of responsible adoption.</p>
+    </div>
+  </section>
+
+  <!-- TABS — WHITE SECTION ═══ -->
+  <section class="sect-white pad">
+    <div class="wrap">
+      <div class="tab-nav">
+        <button class="tab-btn active" data-tab="education" style="color:var(--w-text);">AI Ethics Education</button>
+        <button class="tab-btn" data-tab="business" style="color:var(--w-muted);">Business Transformation</button>
+        <button class="tab-btn" data-tab="governance" style="color:var(--w-muted);">Ethics &amp; Governance</button>
+        <button class="tab-btn" data-tab="technology" style="color:var(--w-muted);">Technology Solutions</button>
+      </div>
+      <style>
+        .sect-white .tab-nav {
+          border-color: var(--w-border);
+        }
+
+        .sect-white .tab-btn {
+          color: var(--w-muted);
+        }
+
+        .sect-white .tab-btn.active,
+        .sect-white .tab-btn:hover {
+          color: var(--w-text);
+        }
+
+        .sect-white .svc-detail h2 {
+          color: var(--w-text);
+        }
+
+        .sect-white .svc-detail p {
+          color: var(--w-muted);
+        }
+      </style>
+
+      <div class="tab-panel active" id="education">
+        <div class="svc-detail">
+          <div>
+            <span
+              style="display:inline-block;font-family:var(--s);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:rgba(16,124,109,.08);border:1px solid rgba(16,124,109,.2);padding:.35rem 1rem;border-radius:999px;margin-bottom:1rem;">For
+              Schools &amp; Institutions</span>
+            <h2>Preparing the Next Generation for an AI Shaped World</h2>
+            <p>AI tools are already part of how students learn, research, and produce work often without structured
+              guidance on how to use them ethically or effectively.</p>
+            <p>Our AI Ethics Awareness Workshops equip students with foundational knowledge and practical awareness to
+              engage with AI responsibly in the classroom and beyond.</p>
+            <a href="contact.html" class="btn btn-teal" style="margin-top:1.5rem;">Bring This Workshop to Your
+              School</a>
+          </div>
+          <div>
+            <div class="img-b" style="aspect-ratio:4/3;margin-bottom:1.5rem;"><img src="images/services-education.jpg"
+                alt="AI education" /></div>
+            <div class="feat-box" style="background:var(--w-bg);border-color:var(--w-border);">
+              <h4 style="color:var(--teal);">What the Program Covers</h4>
+              <ul class="feat-list">
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Introduction to AI what it is, how it
+                  works, and where it appears in everyday life</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Responsible use of AI tools in education
+                  and academic integrity</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Understanding AI generated content and
+                  evaluating outputs critically</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Risks of AI misinformation, bias,
+                  privacy, and ethical boundaries</li>
+                <li style="color:var(--w-muted);">Ethical digital behaviour habits for responsible online
+                  participation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="business">
+        <div class="svc-detail">
+          <div>
+            <span
+              style="display:inline-block;font-family:var(--s);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:rgba(16,124,109,.08);border:1px solid rgba(16,124,109,.2);padding:.35rem 1rem;border-radius:999px;margin-bottom:1rem;">For
+              Businesses, MSMEs &amp; Startups</span>
+            <h2>Practical AI Adoption Built Around Your Business</h2>
+            <p>The organizations that will lead their industries are the ones building AI capabilities today with
+              strategy, not guesswork.</p>
+            <p>Our program helps companies, MSMEs, and startups identify where AI adds real value, implement practical
+              solutions, and build capabilities for long term transformation.</p>
+            <a href="contact.html" class="btn btn-teal" style="margin-top:1.5rem;">Register Your Organization</a>
+          </div>
+          <div>
+            <div class="img-b" style="aspect-ratio:4/3;margin-bottom:1.5rem;"><img src="images/services-business.jpg"
+                alt="Business AI" /></div>
+            <div class="feat-box" style="background:var(--w-bg);border-color:var(--w-border);">
+              <h4 style="color:var(--teal);">Areas Covered</h4>
+              <ul class="feat-list">
+                <li style="color:var(--w-muted);border-color:var(--w-border);">AI powered marketing and content creation
+                  accelerating campaigns</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Automation of routine business processes
+                  reducing manual effort</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">AI assisted decision making leveraging
+                  data for better outcomes</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Productivity tools for teams AI
+                  solutions that help teams work smarter</li>
+                <li style="color:var(--w-muted);">Responsible AI use in business governance, risk, and ethics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="governance">
+        <div class="svc-detail">
+          <div>
+            <span
+              style="display:inline-block;font-family:var(--s);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:rgba(16,124,109,.08);border:1px solid rgba(16,124,109,.2);padding:.35rem 1rem;border-radius:999px;margin-bottom:1rem;">For
+              Enterprises, Government &amp; Institutions</span>
+            <h2>Deploy AI With Confidence and Accountability</h2>
+            <p>As AI becomes embedded in core operations, the stakes of getting governance wrong are rising from
+              hiring and lending to healthcare and public services.</p>
+            <p>We help organizations build the internal structures, policies, and practices needed to deploy AI
+              responsibly at scale aligned with the EU AI Act and NIST AI RMF.</p>
+            <a href="contact.html" class="btn btn-teal" style="margin-top:1.5rem;">Request a Governance Assessment</a>
+          </div>
+          <div>
+            <div class="img-b" style="aspect-ratio:4/3;margin-bottom:1.5rem;"><img src="images/services-governance.jpg"
+                alt="Governance" /></div>
+            <div class="feat-box" style="background:var(--w-bg);border-color:var(--w-border);">
+              <h4 style="color:var(--teal);">Advisory Services</h4>
+              <ul class="feat-list">
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Responsible AI Governance Frameworks
+                  internal policies and decision structures</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">AI Risk and Bias Assessment evaluating
+                  systems for ethical vulnerabilities</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">AI Policy and Compliance Advisory EU AI
+                  Act, NIST AI RMF alignment</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Responsible AI Strategy Development
+                  long term ethical adoption roadmaps</li>
+                <li style="color:var(--w-muted);">Executive and Workforce AI Training structured learning for
+                  leadership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="technology">
+        <div class="svc-detail">
+          <div>
+            <span
+              style="display:inline-block;font-family:var(--s);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:rgba(16,124,109,.08);border:1px solid rgba(16,124,109,.2);padding:.35rem 1rem;border-radius:999px;margin-bottom:1rem;">For
+              Organizations Ready to Implement</span>
+            <h2>From Strategy to Implementation Built With You</h2>
+            <p>When organizations are ready to move from strategy to implementation, our technology team designs,
+              builds, and deploys AI powered digital solutions tailored to your specific needs.</p>
+            <p>We combine technical capability with governance expertise ensuring every solution is functional,
+              ethically grounded, scalable, and aligned with your long term strategy.</p>
+            <a href="contact.html" class="btn btn-teal" style="margin-top:1.5rem;">Discuss Your Technology Needs</a>
+          </div>
+          <div>
+            <div class="img-b" style="aspect-ratio:4/3;margin-bottom:1.5rem;"><img src="images/services-technology.jpg"
+                alt="Technology" /></div>
+            <div class="feat-box" style="background:var(--w-bg);border-color:var(--w-border);">
+              <h4 style="color:var(--teal);">Technology Services</h4>
+              <ul class="feat-list">
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Business workflow automation
+                  eliminating manual bottlenecks intelligently</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">AI enabled digital tool development
+                  custom applications powered by AI</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Mobile and web application development
+                  user facing products with AI</li>
+                <li style="color:var(--w-muted);border-color:var(--w-border);">Intelligent productivity systems tools
+                  that enhance team performance</li>
+                <li style="color:var(--w-muted);">Staff AI upskilling equipping teams to use and manage AI effectively
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-orb"></div>
+    <div class="wrap">
+      <div class="cta-in">
+        <h2>Not Sure Where to Start?</h2>
+        <p>Let's talk. We'll help you identify the right service for your organization's needs.</p>
+        <div class="cta-btns"><a href="contact.html" class="btn btn-gold">Book a Free Consultation</a><a
+            href="approach.html" class="btn btn-ghost">See Our Approach</a></div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="images/logo.png" class="logo-img"
+              alt="Linnexus" style="filter:brightness(0) invert(1);" /><span class="logo-text">LINNEXUS</span></a>
+          <p class="f-tag">Responsible AI. Real Results.</p>
+          <p class="f-desc">Helping organizations across Nigeria and Africa adopt AI responsibly.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+            <li><a href="partners.html">Partnerships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">AI Ethics Education</a></li>
+            <li><a href="services.html">Business Transformation</a></li>
+            <li><a href="services.html">Ethics &amp; Governance</a></li>
+            <li><a href="services.html">Technology Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@linnexus.com">info@linnexus.com</a></li>
+            <li><a href="tel:+2348163452701">+234 816 345 2701</a></li>
+            <li>Nigeria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot">
+        <p>&copy; 2025 Linnexus Digital Solutions Nig Ltd. All rights reserved.</p>
+        <div class="footer-leg"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

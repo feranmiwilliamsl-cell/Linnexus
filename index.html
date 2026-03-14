@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Linnexus Digital Solutions Responsible AI Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="cur-dot"></div>
+  <div class="cur-ring"></div>
+  <canvas id="particles"></canvas>
+  <div class="hero-bg"></div>
+  <div class="hero-img-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-in">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" class="logo-img" alt="Linnexus logo" />
+        <span class="logo-text">LINNEXUS</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">Who We Are</a></li>
+        <li><a href="services.html">What We Do</a></li>
+        <li><a href="approach.html">Our Approach</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mob-menu" id="mobMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Who We Are</a></li>
+      <li><a href="services.html">What We Do</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div>
+      <h1 class="hero-title fade-up d1">Helping Organizations<br /><span class="accent">Adopt AI
+          Responsibly</span><br />  and Use It Effectively.</h1>
+      <p class="hero-sub fade-up d2">Linnexus Digital Solutions Nig Ltd is an AI consulting firm helping businesses,
+        institutions, and governments integrate Artificial Intelligence with clarity, confidence, and ethical rigor.</p>
+      <div class="hero-btns fade-up d3">
+        <a href="services.html" class="btn btn-teal">Explore Our Services</a>
+        <a href="contact.html" class="btn btn-ghost">Book a Consultation</a>
+      </div>
+      <div class="hero-scroll fade-up d4">
+        <div class="scroll-ln"></div><span>Scroll to explore</span>
+      </div>
+    </div>
+    <div class="hero-card fade-up d2">
+      <img src="images/hero-visual.jpg" alt="Responsible AI Strategy" />
+      <div class="hero-chip">
+        <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Steps</span></div>
+        <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Principles</span></div>
+        <div class="hstat"><span class="hstat-n">5</span><span class="hstat-l">Sectors</span></div>
+      </div>
+      <div class="hero-card-overlay">
+        <div class="hero-card-tag"><span class="hero-card-tag-dot"></span>Responsible AI</div>
+        <div class="hero-card-title">Building Ethical AI Strategies for African Organizations</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHO WE ARE (dark) ═══ -->
+  <section class="sect pad">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal-l">
+          <div class="eyebrow teal">Who We Are</div>
+          <h2>Navigating AI Adoption in an Increasingly Complex World</h2>
+          <p>As Artificial Intelligence reshapes industries, organizations face two urgent challenges: how to adopt AI
+            effectively, and how to use it responsibly. At Linnexus, we believe these questions cannot be separated.</p>
+          <p style="margin-top:.75rem;margin-bottom:2rem;">We work with companies, government agencies, startups, and
+            educational institutions to build AI strategies that are practical, sustainable, and grounded in responsible
+            governance.</p>
+          <a href="about.html" class="link-arr">Learn more about us &#8594;</a>
+        </div>
+        <div class="reveal-r" style="display:flex;flex-direction:column;gap:1.2rem;">
+          <div class="pillar">
+            <div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg></div>
+            <div>
+              <h4>Effective Adoption</h4>
+              <p>Practical AI integration that delivers measurable results.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div>
+              <h4>Responsible Governance</h4>
+              <p>Ethical frameworks that protect your organization and stakeholders.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="p-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                <polyline points="17 6 23 6 23 12" />
+              </svg></div>
+            <div>
+              <h4>Sustainable Growth</h4>
+              <p>Long term digital capabilities built to evolve alongside AI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ IMAGE STRIP (full-bleed, dark) ═══ -->
+  <div style="background:var(--navy-deep);overflow:hidden;">
+    <div class="img-strip reveal-s">
+      <div class="img-strip-item"><img src="images/about-story.jpg" alt="Strategy" />
+        <div class="img-label"><span>Strategy &amp; Advisory</span></div>
+      </div>
+      <div class="img-strip-item"><img src="images/hero-visual2.jpg" alt="AI Innovation" />
+       <div class="img-label"><span>AI Innovation</span></div>
+      </div>
+      <div class="img-strip-item"><img src="images/about-education.jpg" alt="Education" />
+        <div class="img-label"><span>Education &amp; Training</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WHAT WE DO — WHITE SECTION ═══ -->
+  <section class="sect-white pad">
+    <div class="wrap">
+      <div class="s-head c reveal">
+        <div class="eyebrow w-teal center">What We Do</div>
+        <h2>Three Ways We Help Organizations Lead with AI</h2>
+        <p>From educating the next generation to governing enterprise level AI, our services address the full spectrum
+          of responsible adoption.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border);">
+          <div class="svc-img"><img src="images/services-education.jpg" alt="AI Ethics Education" /></div>
+          <div class="svc-body">
+            <div class="svc-num">01</div>
+            <h3 style="color:var(--w-text);">AI Ethics Education</h3>
+            <p style="color:var(--w-muted);">We prepare students and institutions for an AI shaped world equipping the
+              next generation with responsible digital habits.</p>
+            <a href="services.html" class="svc-link" style="color:var(--teal);">Explore Program &#8594;</a>
+          </div>
+        </div>
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border);">
+          <div class="svc-img"><img src="images/services-business.jpg" alt="Business AI Transformation" /></div>
+          <div class="svc-body">
+            <div class="svc-num">02</div>
+            <h3 style="color:var(--w-text);">Business AI Transformation</h3>
+            <p style="color:var(--w-muted);">We help companies, MSMEs, and startups identify AI opportunities and build
+              capabilities for long term growth.</p>
+            <a href="services.html" class="svc-link" style="color:var(--teal);">Explore Program &#8594;</a>
+          </div>
+        </div>
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border);">
+          <div class="svc-img"><img src="images/services-governance.jpg" alt="AI Ethics & Governance" /></div>
+          <div class="svc-body">
+            <div class="svc-num">03</div>
+            <h3 style="color:var(--w-text);">AI Ethics &amp; Governance</h3>
+            <p style="color:var(--w-muted);">We help organizations deploy AI with accountability aligned with global
+              standards including the EU AI Act and NIST.</p>
+            <a href="services.html" class="svc-link" style="color:var(--teal);">Explore Services &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRINCIPLES (dark) ═══ -->
+  <section class="sect-deep pad">
+    <div class="wrap">
+      <div class="s-head c reveal">
+        <div class="eyebrow teal center">Our Foundation</div>
+        <h2>Responsible AI Principles</h2>
+        <p>Everything we build, advise, and teach is guided by six core commitments to ethical AI.</p>
+      </div>
+      <div class="principles">
+        <div class="prin reveal"><span class="prin-dot"></span>Responsibility</div>
+        <div class="prin reveal"><span class="prin-dot"></span>Transparency</div>
+        <div class="prin reveal"><span class="prin-dot"></span>Fairness</div>
+        <div class="prin reveal"><span class="prin-dot"></span>Accountability</div>
+        <div class="prin reveal"><span class="prin-dot"></span>Human Oversight</div>
+        <div class="prin reveal"><span class="prin-dot"></span>Inclusion</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHO WE SERVE (dark) ═══ -->
+  <section class="sect pad">
+    <div class="wrap">
+      <div class="split">
+        <div class="reveal-l">
+          <div class="eyebrow gold">Who We Serve</div>
+          <h2>Built for Organizations at Every Stage</h2>
+          <p>Whether just beginning your AI journey or strengthening existing governance, Linnexus supports you across
+            every sector.</p>
+          <a href="partners.html" class="link-arr" style="margin-top:2rem;display:inline-flex;">See all client segments
+            &#8594;</a>
+        </div>
+        <div class="serve-grid reveal-r">
+          <div class="serve-item">
+            <div class="s-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              </svg></div><span>Companies &amp; Enterprises</span>
+          </div>
+          <div class="serve-item">
+            <div class="s-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="2" x2="12" y2="6" />
+                <line x1="12" y1="18" x2="12" y2="22" />
+                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
+                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
+                <line x1="2" y1="12" x2="6" y2="12" />
+                <line x1="18" y1="12" x2="22" y2="12" />
+              </svg></div><span>MSMEs &amp; Startups</span>
+          </div>
+          <div class="serve-item">
+            <div class="s-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="3" y1="22" x2="21" y2="22" />
+                <line x1="6" y1="18" x2="6" y2="11" />
+                <line x1="10" y1="18" x2="10" y2="11" />
+                <line x1="14" y1="18" x2="14" y2="11" />
+                <line x1="18" y1="18" x2="18" y2="11" />
+                <polygon points="12 2 20 7 4 7" />
+              </svg></div><span>Government Agencies</span>
+          </div>
+          <div class="serve-item">
+            <div class="s-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg></div><span>NGOs &amp; Civil Society</span>
+          </div>
+          <div class="serve-item" style="grid-column:1/-1;max-width:50%;">
+            <div class="s-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3FCFBD"
+                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                <path d="M6 12v5c3 3 9 3 12 0v-5" />
+              </svg></div><span>Educational Institutions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ QUOTE (dark-deep) ═══ -->
+  <section class="sect-deep pad-sm">
+    <div class="wrap" style="max-width:920px;">
+      <div class="quote-box reveal-s">
+        <p class="quote-text">"The challenge of our time is not whether to adopt Artificial Intelligence it is whether
+          we have the wisdom to deploy it in ways that genuinely serve humanity. That question sits at the heart of
+          everything we do."</p>
+        <div class="quote-by">Linnexus Digital Solutions Nig Ltd</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta">
+    <div class="cta-orb"></div>
+    <div class="wrap">
+      <div class="cta-in">
+        <h2>Ready to Build Your AI Strategy?</h2>
+        <p>Let's talk about where your organization is today and what responsible AI adoption looks like for you.</p>
+        <div class="cta-btns"><a href="contact.html" class="btn btn-gold">Book a Free Consultation</a><a
+            href="services.html" class="btn btn-ghost">View Our Services</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="images/logo.png" class="logo-img"
+              alt="Linnexus" style="filter:brightness(0) invert(1);" /><span class="logo-text">LINNEXUS</span></a>
+          <p class="f-tag">Responsible AI. Real Results.</p>
+          <p class="f-desc">Helping organizations across Nigeria and Africa adopt AI responsibly.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+            <li><a href="partners.html">Partnerships</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">AI Ethics Education</a></li>
+            <li><a href="services.html">Business Transformation</a></li>
+            <li><a href="services.html">Ethics &amp; Governance</a></li>
+            <li><a href="services.html">Technology Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@linnexus.com">info@linnexus.com</a></li>
+            <li><a href="tel:+2348163452701">+234 816 345 2701</a></li>
+            <li>Nigeria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot">
+        <p>&copy; 2025 Linnexus Digital Solutions Nig Ltd. All rights reserved.</p>
+        <div class="footer-leg"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
