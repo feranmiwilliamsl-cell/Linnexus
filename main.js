@@ -77,4 +77,54 @@ document.querySelectorAll('.tab-btn').forEach(btn=>{
   });
 });
 
+/* ── CONTACT FORM AJAX ── */
+const contactForm = document.getElementById('contactForm');
+if(contactForm){
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = 'Sending...';
+    btn.disabled = true;
+
+    const formData = new FormData(contactForm);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    if(object.access_key === 'YOUR_WEB3FORMS_ACCESS_KEY') {
+      alert('Please set up your Web3Forms Access Key in contact.html before sending.');
+      btn.innerHTML = originalText;
+      btn.disabled = false;
+      return;
+    }
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let resJson = await response.json();
+        if (response.status == 200) {
+            alert('Success! Your message has been sent to Linnexus.');
+            contactForm.reset();
+        } else {
+            console.error(response);
+            alert(resJson.message);
+        }
+    })
+    .catch(error => {
+        console.error(error);
+        alert('Something went wrong. Please try again later.');
+    })
+    .finally(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    });
+  });
+}
+
 })();

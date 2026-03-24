@@ -116,25 +116,29 @@
               style="height:3px;background:linear-gradient(90deg,var(--teal),var(--gold),transparent);margin:-3rem -3rem 2.5rem -3rem;">
             </div>
             <h3 style="color:var(--w-text);margin-bottom:1.75rem;">Send a Message</h3>
-            <form id="contactForm" novalidate>
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <input type="hidden" name="subject" value="New Contact Enquiry from Linnexus Website">
+              <input type="hidden" name="from_name" value="Linnexus Contact Form">
+              
               <div class="form-row">
-                <div class="fg"><label style="color:var(--w-muted);">Full Name *</label><input type="text"
+                <div class="fg"><label style="color:var(--w-muted);">Full Name *</label><input type="text" name="name"
                     placeholder="Your full name" required
                     style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);" /></div>
-                <div class="fg"><label style="color:var(--w-muted);">Organisation *</label><input type="text"
+                <div class="fg"><label style="color:var(--w-muted);">Organisation *</label><input type="text" name="organisation"
                     placeholder="Your organisation" required
                     style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);" /></div>
               </div>
               <div class="form-row">
-                <div class="fg"><label style="color:var(--w-muted);">Email Address *</label><input type="email"
+                <div class="fg"><label style="color:var(--w-muted);">Email Address *</label><input type="email" name="email"
                     placeholder="you@organisation.com" required
                     style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);" /></div>
-                <div class="fg"><label style="color:var(--w-muted);">Phone Number</label><input type="tel"
+                <div class="fg"><label style="color:var(--w-muted);">Phone Number</label><input type="tel" name="phone"
                     placeholder="+234 ..."
                     style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);" /></div>
               </div>
               <div class="fg"><label style="color:var(--w-muted);">Enquiry Type *</label>
-                <select required style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);">
+                <select name="enquiry_type" required style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);">
                   <option value="" disabled selected>Select enquiry type</option>
                   <option>Consultancy Enquiry</option>
                   <option>AI Ethics Workshop</option>
@@ -142,7 +146,7 @@
                   <option>General Enquiry</option>
                 </select>
               </div>
-              <div class="fg"><label style="color:var(--w-muted);">Message *</label><textarea
+              <div class="fg"><label style="color:var(--w-muted);">Message *</label><textarea name="message"
                   placeholder="Tell us about your organization and what you're looking to achieve..." required
                   style="background:var(--w-bg);border-color:var(--w-border);color:var(--w-text);"></textarea></div>
               <div class="f-sub"><button type="submit" class="btn btn-teal"
