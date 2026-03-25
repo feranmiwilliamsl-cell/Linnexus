@@ -2112,6 +2112,13 @@ p {
   transform: none
 }
 
+/* Services grid */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem
+}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px) {
   .hero {
@@ -2424,13 +2431,6 @@ p {
   .phero p {
     font-size: .9rem
   }
-}
-
-/* Services grid */
-.svc-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem
 }
 
 /* Mission/Vision grid */
