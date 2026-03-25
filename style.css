@@ -2139,7 +2139,7 @@ p {
   }
 
   .svc-grid {
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr
   }
 
   .serve-cards {
@@ -2431,4 +2431,34 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem
+}
+
+/* Mission/Vision grid */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem
+}
+
+/* Commitments grid */
+.commitments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem
+}
+
+@media(max-width:1024px) {
+  .mv-grid {
+    grid-template-columns: 1fr
+  }
+
+  .commitments-grid {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+@media(max-width:768px) {
+  .commitments-grid {
+    grid-template-columns: 1fr
+  }
 }
