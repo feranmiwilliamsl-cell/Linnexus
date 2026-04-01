@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Insights - Linnexus Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Favicon and Social Thumbnails -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="apple-touch-icon" href="images/favicon.svg" />
+  <meta property="og:title" content="Insights - Linnexus Digital Solutions" />
+  <meta property="og:description" content="Explore our latest thoughts, research, and strategies on responsible AI adoption, ethics, and digital transformation." />
+  <meta property="og:image" content="https://www.linnexus.com/images/og-thumbnail.jpg" />
+  <meta property="og:url" content="https://www.linnexus.com/insight.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Insights - Linnexus Digital Solutions" />
+  <meta name="twitter:description" content="Explore our latest thoughts, research, and strategies on responsible AI adoption, ethics, and digital transformation." />
+  <meta name="twitter:image" content="https://www.linnexus.com/images/og-thumbnail.jpg" />
+</head>
+
+<body>
+  <div class="cur-dot"></div>
+  <div class="cur-ring"></div>
+  <canvas id="particles"></canvas>
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-in">
+      <a href="index.html" class="logo"><img src="images/logo.png" class="logo-img" alt="Linnexus" /><span
+          class="logo-text">LINNEXUS</span></a>
+      <ul class="nav-links">
+        <li><a href="about.html">Who We Are</a></li>
+        <li><a href="services.html">What We Do</a></li>
+        <li><a href="approach.html">Our Approach</a></li>
+        <li><a href="partners.html">Partners</a></li>
+        <li><a href="insight.html" class="active">Insights</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu">
+    <ul>
+      <li><a href="about.html">Who We Are</a></li>
+      <li><a href="services.html">What We Do</a></li>
+      <li><a href="approach.html">Our Approach</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="insight.html">Insights</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO (dark) -->
+  <section class="phero">
+    <div class="phero-photo" style="background-image:url('images/hero-visual.jpg')"></div>
+    <div class="phero-grad"></div>
+    <div class="phero-grid"></div>
+    <div class="wrap">
+      <div class="eyebrow teal fade-up">Insights &amp; Perspectives</div>
+      <h1 class="fade-up d1">Navigating the Future of<br /><span class="accent">AI Innovation.</span></h1>
+      <p class="fade-up d2">Explore our latest thoughts, research, and strategies on responsible AI adoption, ethics, and digital transformation.</p>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES — WHITE SECTION -->
+  <section class="sect-white pad">
+    <div class="wrap">
+      <div class="s-head c reveal">
+        <div class="eyebrow w-teal center">Latest Content</div>
+        <h2>Featured Articles</h2>
+        <p>Stay informed with our expert analysis on the artificial intelligence landscape across Africa.</p>
+      </div>
+
+      <!-- We use the existing svc-grid for our blog cards, giving them a polished appearance -->
+      <div class="svc-grid">
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border); position: relative;">
+          <div class="badge" style="position: absolute; top: 15px; left: 15px; margin: 0; background: rgba(255, 255, 255, 0.95); z-index: 10;"><span class="badge-dot"></span>Tech Strategy</div>
+          <div class="svc-img"><img src="images/services-business.jpg" alt="AI Strategy" /></div>
+          <div class="svc-body" style="padding-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--teal); margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> March 28, 2026</p>
+            <h3 style="color:var(--w-text); margin-bottom: 1rem;">Building Ethical AI Frameworks for African Enterprises</h3>
+            <p style="color:var(--w-muted); margin-bottom: 1.5rem;">Learn the key foundational steps to integrate responsible AI policies that protect stakeholders while driving innovation.</p>
+            <a href="article.html" class="svc-link" style="color:var(--teal);">Read Article &#8594;</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border); position: relative;">
+          <div class="badge" style="position: absolute; top: 15px; left: 15px; margin: 0; background: rgba(255, 255, 255, 0.95); z-index: 10; border-color: var(--teal-b);"><span class="badge-dot" style="background: var(--gold-l); box-shadow: 0 0 8px var(--gold-l);"></span>AI Education</div>
+          <div class="svc-img"><img src="images/services-education.jpg" alt="AI in Education" /></div>
+          <div class="svc-body" style="padding-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--teal); margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> March 15, 2026</p>
+            <h3 style="color:var(--w-text); margin-bottom: 1rem;">Bridging the AI Awareness Gap in Institutions</h3>
+            <p style="color:var(--w-muted); margin-bottom: 1.5rem;">Why early exposure to AI literacy is essential for modern educational curriculums, and how we implement it.</p>
+            <a href="article.html" class="svc-link" style="color:var(--teal);">Read Article &#8594;</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border); position: relative;">
+          <div class="badge" style="position: absolute; top: 15px; left: 15px; margin: 0; background: rgba(255, 255, 255, 0.95); z-index: 10;"><span class="badge-dot"></span>Governance</div>
+          <div class="svc-img"><img src="images/services-governance.jpg" alt="Governance" /></div>
+          <div class="svc-body" style="padding-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--teal); margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> February 22, 2026</p>
+            <h3 style="color:var(--w-text); margin-bottom: 1rem;">Navigating AI Compliance and the Global Standard</h3>
+            <p style="color:var(--w-muted); margin-bottom: 1.5rem;">An overview of international AI guidelines, including the EU AI Act, and its growing implications for African businesses.</p>
+            <a href="article.html" class="svc-link" style="color:var(--teal);">Read Article &#8594;</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border); position: relative;">
+          <div class="badge" style="position: absolute; top: 15px; left: 15px; margin: 0; background: rgba(255, 255, 255, 0.95); z-index: 10;"><span class="badge-dot"></span>Case Study</div>
+          <div class="svc-img"><img src="images/about-story.jpg" alt="Case Study" /></div>
+          <div class="svc-body" style="padding-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--teal); margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> February 05, 2026</p>
+            <h3 style="color:var(--w-text); margin-bottom: 1rem;">Transforming Logistics with Predictable AI</h3>
+            <p style="color:var(--w-muted); margin-bottom: 1.5rem;">How we partnered with a regional logistics provider to automate their routing securely with zero ethical trade-offs.</p>
+            <a href="article.html" class="svc-link" style="color:var(--teal);">Read Article &#8594;</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border); position: relative;">
+          <div class="badge" style="position: absolute; top: 15px; left: 15px; margin: 0; background: rgba(255, 255, 255, 0.95); z-index: 10; border-color: var(--teal-b);"><span class="badge-dot" style="background: var(--gold-l); box-shadow: 0 0 8px var(--gold-l);"></span>Opinion</div>
+          <div class="svc-img"><img src="images/about-education.jpg" alt="Opinion" /></div>
+          <div class="svc-body" style="padding-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--teal); margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> January 28, 2026</p>
+            <h3 style="color:var(--w-text); margin-bottom: 1rem;">The Human Element in Machine Decision-Making</h3>
+            <p style="color:var(--w-muted); margin-bottom: 1.5rem;">Why human oversight remains the most critical ingredient even as autonomous algorithms continue to mature and learn.</p>
+            <a href="article.html" class="svc-link" style="color:var(--teal);">Read Article &#8594;</a>
+          </div>
+        </div>
+
+        <div class="svc-card reveal" style="background:#fff;border-color:var(--w-border); position: relative;">
+          <div class="badge" style="position: absolute; top: 15px; left: 15px; margin: 0; background: rgba(255, 255, 255, 0.95); z-index: 10;"><span class="badge-dot"></span>Tech Strategy</div>
+          <div class="svc-img"><img src="images/hero-visual2.jpg" alt="Industry" /></div>
+          <div class="svc-body" style="padding-top: 1.5rem;">
+            <p style="font-size: 0.85rem; color: var(--teal); margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> January 12, 2026</p>
+            <h3 style="color:var(--w-text); margin-bottom: 1rem;">Overcoming the Hurdles of Enterprise Adoption</h3>
+            <p style="color:var(--w-muted); margin-bottom: 1.5rem;">Discover robust approaches for MSMEs looking to leverage new intelligence tools seamlessly without disrupting operational momentum.</p>
+            <a href="article.html" class="svc-link" style="color:var(--teal);">Read Article &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="reveal" style="display: flex; justify-content: center; margin-top: 4rem; gap: 1rem;">
+        <a href="#" class="btn btn-teal" style="padding: 0.6rem 1.2rem; min-width: 44px; display: inline-flex; justify-content: center;">1</a>
+        <a href="#" class="btn btn-ghost" style="padding: 0.6rem 1.2rem; min-width: 44px; display: inline-flex; justify-content: center; border-color: var(--teal-b); color: var(--w-text);">2</a>
+        <a href="#" class="btn btn-ghost" style="padding: 0.6rem 1.2rem; min-width: 44px; display: inline-flex; justify-content: center; border-color: var(--teal-b); color: var(--w-text);">3</a>
+        <a href="#" class="btn btn-ghost" style="padding: 0.6rem 1.2rem; display: inline-flex; justify-content: center; border-color: var(--teal-b); color: var(--w-text);">Next <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SIGNUP (dark-deep) -->
+  <section class="sect-deep pad">
+    <div class="wrap">
+      <div class="glass-card reveal" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 4rem 2.5rem;">
+        <div class="eyebrow gold center" style="margin-bottom:.75rem;">Stay Updated</div>
+        <h2 style="margin-bottom: 1rem;">Join Our Newsletter</h2>
+        <p style="margin-bottom: 2rem; color: rgba(255,255,255,0.7);">Get the latest insights, strategies, and news on responsible AI delivered monthly straight to your inbox.</p>
+        
+        <form style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" placeholder="Enter your email address" style="flex: 1; min-width: 260px; padding: 1rem 1.5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-family: var(--d); outline: none;" onfocus="this.style.borderColor='var(--teal-xl)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" required>
+          <button type="submit" class="btn btn-teal" style="flex-shrink: 0;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta-orb"></div>
+    <div class="wrap">
+      <div class="cta-in">
+        <h2>Ready to Work Together?</h2>
+        <p>Talk to our team about how Linnexus can support your organization's AI journey.</p>
+        <div class="cta-btns"><a href="contact.html" class="btn btn-gold">Get in Touch</a><a href="services.html"
+            class="btn btn-ghost">Explore Services</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="logo"><img src="images/logo.png" class="logo-img"
+              alt="Linnexus" style="filter:brightness(0) invert(1);" /><span class="logo-text">LINNEXUS</span></a>
+          <p class="f-tag">Responsible AI. Real Results.</p>
+          <p class="f-desc">Helping organizations across Nigeria and Africa adopt AI responsibly.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="approach.html">Our Approach</a></li>
+            <li><a href="partners.html">Partnerships</a></li>
+            <li><a href="insight.html" style="color:var(--teal-l);">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="services.html">AI Ethics Education</a></li>
+            <li><a href="services.html">Business Transformation</a></li>
+            <li><a href="services.html">Ethics &amp; Governance</a></li>
+            <li><a href="services.html">Technology Solutions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:info@linnexus.com">info@linnexus.com</a></li>
+            <li><a href="tel:+2348163452701">+234 816 345 2701</a></li>
+            <li>Nigeria</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bot">
+        <p>&copy; 2026 Linnexus Digital Solutions Nig Ltd. All rights reserved.</p>
+        <div class="footer-leg"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
