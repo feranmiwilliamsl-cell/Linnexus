@@ -66,34 +66,113 @@
     </ul>
   </div>
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <div>
-      <h1 class="hero-title fade-up d1">Helping Organizations<br /><span class="accent">Adopt AI
-          Responsibly</span><br /> and Use It Effectively.</h1>
-      <p class="hero-sub fade-up d2">Linnexus Digital Solutions Nig Ltd is an AI consulting firm helping businesses,
-        institutions, and governments integrate Artificial Intelligence with clarity, confidence, and ethical rigor.</p>
-      <div class="hero-btns fade-up d3">
-        <a href="services" class="btn btn-teal">Explore Our Services</a>
-        <a href="contact" class="btn btn-ghost">Book a Consultation</a>
-      </div>
-      <div class="hero-scroll fade-up d4">
-        <div class="scroll-ln"></div><span>Scroll to explore</span>
+  <style>
+    /* ── HERO SLIDER ── */
+    .hero-slider-wrap { position: relative; overflow: hidden; min-height: 100vh; }
+    .hero-slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1; }
+    .hero-slide.active { opacity: 1; pointer-events: auto; z-index: 2; position: relative; }
+    .hero-slide.prev { opacity: 0; z-index: 1; }
+    .hero-slide .hero { min-height: 100vh; }
+    .hero-controls { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 0.8rem; }
+    .hero-controls .dot { width: 32px; height: 4px; background: rgba(255, 255, 255, 0.25); border-radius: 2px; cursor: pointer; transition: background 0.3s, width 0.3s; }
+    .hero-controls .dot.active { background: var(--teal-xl); width: 48px; }
+    
+    .hero-slide .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s, transform 0.8s; }
+    .hero-slide.active .fade-up { opacity: 1; transform: translateY(0); }
+    .hero-slide.active .d1 { transition-delay: 0.2s; }
+    .hero-slide.active .d2 { transition-delay: 0.4s; }
+    .hero-slide.active .d3 { transition-delay: 0.6s; }
+    .hero-slide.active .d4 { transition-delay: 0.8s; }
+  </style>
+
+  <!-- ═══ HERO SLIDER ═══ -->
+  <section class="hero-slider-wrap" id="mainHeroSlider">
+    <!-- Slide 1: Educator Program -->
+    <div class="hero-slide active" data-idx="0">
+      <div class="hero">
+        <div>
+          <h1 class="hero-title fade-up d1">Linnexus Educator <br /><span class="accent" style="font-family:'Playfair Display',serif;font-style:italic;background:linear-gradient(120deg, var(--gold), var(--teal-xl));-webkit-background-clip:text;">Empowerment Program</span></h1>
+          <p class="hero-sub fade-up d2">Join our free virtual training specifically designed to equip teachers with practical AI tools, emotional intelligence strategies, and mental wellness support.</p>
+          <div class="hero-btns fade-up d3">
+            <a href="educator-program" class="btn btn-gold">Secure Your Spot</a>
+            <a href="educator-program#what-you-gain" class="btn btn-ghost">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-card fade-up d2" style="border-color: rgba(245,166,35,0.3); box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(245,166,35,.15);">
+          <img src="images/teacher2.jpg" alt="Educator Empowerment" style="object-position: center top;" />
+          <div class="hero-chip" style="background:rgba(245,166,35,0.1); border-color:var(--gold-b);">
+            <div class="hstat"><span class="hstat-n" style="color:var(--gold-l);">50</span><span class="hstat-l">Prompts</span></div>
+            <div class="hstat"><span class="hstat-n" style="color:var(--gold-l);">AI</span><span class="hstat-l">Tools</span></div>
+            <div class="hstat"><span class="hstat-n" style="color:var(--gold-l);">EQ</span><span class="hstat-l">Skills</span></div>
+          </div>
+          <div class="hero-card-overlay" style="background: linear-gradient(to top, rgba(7, 21, 41, .95) 0%, transparent 65%);">
+            <div class="hero-card-tag" style="color:var(--gold-l);"><span class="hero-card-tag-dot" style="background:var(--gold-l);"></span>Educator Focus</div>
+            <div class="hero-card-title">Equipping Teachers for the AI Era</div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-card fade-up d2">
-      <img src="images/hero-visual.jpg" alt="Responsible AI Strategy" />
-      <div class="hero-chip">
-        <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Steps</span></div>
-        <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Principles</span></div>
-        <div class="hstat"><span class="hstat-n">5</span><span class="hstat-l">Sectors</span></div>
+
+    <!-- Slide 2: Original Hero -->
+    <div class="hero-slide" data-idx="1">
+      <div class="hero">
+        <div>
+          <h1 class="hero-title fade-up d1">Helping Organizations<br /><span class="accent">Adopt AI
+              Responsibly</span><br /> and Use It Effectively.</h1>
+          <p class="hero-sub fade-up d2">Linnexus Digital Solutions Nig Ltd is an AI consulting firm helping businesses,
+            institutions, and governments integrate Artificial Intelligence with clarity, confidence, and ethical rigor.</p>
+          <div class="hero-btns fade-up d3">
+            <a href="services" class="btn btn-teal">Explore Our Services</a>
+            <a href="contact" class="btn btn-ghost">Book a Consultation</a>
+          </div>
+          <div class="hero-scroll fade-up d4">
+            <div class="scroll-ln"></div><span>Scroll to explore</span>
+          </div>
+        </div>
+        <div class="hero-card fade-up d2">
+          <img src="images/hero-visual.jpg" alt="Responsible AI Strategy" />
+          <div class="hero-chip">
+            <div class="hstat"><span class="hstat-n">4</span><span class="hstat-l">Steps</span></div>
+            <div class="hstat"><span class="hstat-n">6</span><span class="hstat-l">Principles</span></div>
+            <div class="hstat"><span class="hstat-n">5</span><span class="hstat-l">Sectors</span></div>
+          </div>
+          <div class="hero-card-overlay">
+            <div class="hero-card-tag"><span class="hero-card-tag-dot"></span>Responsible AI</div>
+            <div class="hero-card-title">Building Ethical AI Strategies for African Organizations</div>
+          </div>
+        </div>
       </div>
-      <div class="hero-card-overlay">
-        <div class="hero-card-tag"><span class="hero-card-tag-dot"></span>Responsible AI</div>
-        <div class="hero-card-title">Building Ethical AI Strategies for African Organizations</div>
-      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="hero-controls">
+       <div class="dot active" data-idx="0"></div>
+       <div class="dot" data-idx="1"></div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let curHero = 0;
+      const heroSlides = document.querySelectorAll('#mainHeroSlider .hero-slide');
+      const heroDots = document.querySelectorAll('#mainHeroSlider .dot');
+      function goHero(i) {
+        heroSlides[curHero].classList.remove('active');
+        heroSlides[curHero].classList.add('prev');
+        setTimeout(() => heroSlides[curHero].classList.remove('prev'), 1200);
+        curHero = i;
+        heroSlides[curHero].classList.add('active');
+        heroDots.forEach((d, j) => d.classList.toggle('active', j === curHero));
+      }
+      heroDots.forEach(d => d.addEventListener('click', () => goHero(+d.dataset.idx)));
+      let heroTmr = setInterval(() => goHero((curHero + 1) % heroSlides.length), 7000);
+      const hs = document.getElementById('mainHeroSlider');
+      if (hs) {
+        hs.addEventListener('mouseenter', () => clearInterval(heroTmr));
+        hs.addEventListener('mouseleave', () => { heroTmr = setInterval(() => goHero((curHero + 1) % heroSlides.length), 7000); });
+      }
+    });
+  </script>
 
   <!-- ═══ WHO WE ARE (dark) ═══ -->
   <section class="sect pad">

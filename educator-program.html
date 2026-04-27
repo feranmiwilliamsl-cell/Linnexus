@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Educator Empowerment Program – Linnexus Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    :root{--navy:#0B1F3A;--navy-deep:#071529;--teal:#3FCFBD;--teal-dark:#0E7367;--gold:#F5A623;--white:#fff;--w-text:#0B1F3A;--w-muted:#5A6A7A;--w-bg:#F6F8FA;--w-border:#DDE3EA;--rx:8px;--rxl:16px;--rxll:24px;--ease:cubic-bezier(0.4, 0, 0.2, 1);--spring:cubic-bezier(0.34, 1.56, 0.64, 1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--navy-deep);color:#e0eaf4;overflow-x:hidden;line-height:1.7;cursor:none;}
+    h1,h2,h3,h4,h5{font-family:'Syne',sans-serif;line-height:1.2;}
+    a{text-decoration:none;color:inherit;}
+    .wrap{max-width:1140px;margin:0 auto;padding:0 2rem;}
+
+    /* CURSOR */
+    .cur{position:fixed;pointer-events:none;z-index:9999;mix-blend-mode:difference;width:10px;height:10px;background:var(--gold);border-radius:50%;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+    .cur-ring{position:fixed;pointer-events:none;z-index:9998;width:36px;height:36px;border:1.5px solid rgba(245,166,35,.5);border-radius:50%;transform:translate(-50%,-50%);transition:all .12s ease-out;}
+
+    /* NAV */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 2.5rem;transition:all .4s var(--ease);background:rgba(7,21,41,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(63,207,189,.12);}
+    .nav.scrolled{background:rgba(6,14,28,.92);backdrop-filter:blur(28px);box-shadow:0 1px 0 rgba(16,124,109,.15),0 4px 24px rgba(0,0,0,.35);}
+    .nav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:76px;}
+    .logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+    .logo-img{height:28px;width:auto;transition:transform .4s var(--spring),filter .3s;}
+    .logo:hover .logo-img{transform:scale(1.06) rotate(-3deg);}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;letter-spacing:.18em;color:rgba(255,255,255,.95);transition:color .3s;}
+    .nav-links{display:flex;align-items:center;gap:2.2rem;list-style:none;}
+    .nav-links a{font-family:'Syne',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.06em;color:rgba(255,255,255,.65);text-decoration:none;transition:color .3s;position:relative;padding-bottom:3px;}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease);}
+    .nav-links a:hover,.nav-links a.active{color:#fff;}
+    .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+    .nav-cta{background:linear-gradient(135deg,var(--teal),#14A090)!important;color:#fff!important;font-weight:700!important;padding:.5rem 1.35rem!important;border-radius:8px!important;box-shadow:0 4px 16px rgba(16,124,109,.3)!important;transition:transform .3s var(--spring),box-shadow .3s!important;}
+    .nav-cta::after{display:none!important;}
+    .nav-cta:hover{transform:translateY(-2px)!important;box-shadow:0 8px 26px rgba(16,124,109,.3)!important;color:#fff!important;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+    .hamburger span{display:block;width:24px;height:2px;border-radius:2px;background:rgba(255,255,255,.8);transition:all .3s;}
+    .mob-menu{display:none;position:fixed;inset:0;z-index:800;background:rgba(6,14,28,.98);backdrop-filter:blur(24px);padding:7rem 2.5rem 2rem;flex-direction:column;}
+    .mob-menu.open{display:flex;}
+    .mob-menu ul{list-style:none;display:flex;flex-direction:column;gap:1.5rem;}
+    .mob-menu a{font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:700;color:rgba(255,255,255,.9);text-decoration:none;transition:color .3s;}
+    .mob-menu a:hover{color:var(--teal);}
+    @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}}
+
+    /* SLIDER */
+    .slider{position:relative;height:100vh;min-height:640px;overflow:hidden;background:var(--navy-deep);}
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s cubic-bezier(.4,0,.2,1);overflow:hidden;}
+    .slide.active{opacity:1;z-index:2;}
+    .slide.prev{opacity:0;z-index:1;}
+    .slide-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;transform:scale(1.08);transition:transform 7s ease-out;}
+    .slide.active .slide-img{transform:scale(1);}
+    .slide-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(7,21,41,.88) 0%,rgba(7,21,41,.55) 55%,rgba(7,21,41,.2) 100%),linear-gradient(0deg,rgba(7,21,41,.92) 0%,transparent 45%);}
+    .slide-accent{position:absolute;z-index:2;left:0;top:0;width:4px;height:100%;background:linear-gradient(180deg,transparent,var(--teal) 30%,var(--gold) 70%,transparent);opacity:.7;}
+    .slide-content{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:0 2rem 5rem;max-width:1140px;margin:0 auto;left:0;right:0;}
+    .slide-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);transition:opacity .7s .3s,transform .7s .3s;}
+    .slide-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold);}
+    .slide.active .slide-eyebrow{opacity:1;transform:translateY(0);}
+    .slide-headline{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,4rem);font-weight:900;line-height:1.1;color:#fff;max-width:760px;margin-bottom:1.5rem;opacity:0;transform:translateY(30px);transition:opacity .8s .5s,transform .8s .5s;}
+    @media(max-width:768px){ .slide-headline{font-size:clamp(1.5rem,7vw,2.5rem);} }
+    .slide.active .slide-headline{opacity:1;transform:translateY(0);}
+    .slide-headline em{font-style:italic;color:var(--teal);}
+    .slide-headline .gw{color:var(--gold);}
+    .slide-body{font-size:clamp(.9rem,1.8vw,1.1rem);color:rgba(255,255,255,.8);max-width:520px;margin-bottom:2.5rem;line-height:1.75;opacity:0;transform:translateY(20px);transition:opacity .7s .75s,transform .7s .75s;}
+    .slide.active .slide-body{opacity:1;transform:translateY(0);}
+    .slide-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;transform:translateY(16px);transition:opacity .6s 1s,transform .6s 1s;}
+    .slide.active .slide-btns{opacity:1;transform:translateY(0);}
+    .btn{display:inline-flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-weight:700;font-size:.85rem;padding:.9rem 2rem;border-radius:var(--rx);transition:all .22s;cursor:pointer;border:none;letter-spacing:.04em;}
+    .btn-gold{background:var(--gold);color:var(--navy);}
+    .btn-gold:hover{background:#f7bc48;transform:translateY(-3px);box-shadow:0 12px 32px rgba(245,166,35,.4);}
+    .btn-teal{background:var(--teal);color:var(--navy);}
+    .btn-teal:hover{background:#5eddd0;transform:translateY(-3px);box-shadow:0 12px 32px rgba(63,207,189,.4);}
+    .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);}
+    .btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+    .slider-ui{position:absolute;bottom:2.5rem;right:3rem;z-index:10;display:flex;align-items:center;gap:1.5rem;}
+    .slide-counter{font-family:'Syne',sans-serif;font-size:.78rem;color:rgba(255,255,255,.5);letter-spacing:.1em;}
+    .slide-counter span{color:var(--gold);font-weight:700;font-size:1rem;}
+    .slider-dots{display:flex;gap:.5rem;}
+    .dot{width:28px;height:3px;background:rgba(255,255,255,.25);border-radius:2px;cursor:pointer;transition:background .3s,width .3s;}
+    .dot.active{background:var(--gold);width:44px;}
+    .slider-arrow{position:absolute;top:50%;z-index:10;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:background .2s,border-color .2s;backdrop-filter:blur(6px);}
+    .slider-arrow:hover{background:rgba(245,166,35,.2);border-color:var(--gold);color:var(--gold);}
+    .slider-arrow.prev{left:2rem;}
+    .slider-arrow.next{right:2rem;}
+    .date-badge{position:absolute;top:38%;right:7%;background:rgba(7,21,41,.85);border:1px solid rgba(245,166,35,.4);backdrop-filter:blur(12px);border-radius:var(--rxll);padding:1.5rem 2rem;z-index:5;text-align:center;animation:floatBadge 4s ease-in-out infinite;}
+    @keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .date-badge .dm{font-family:'Syne',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem;}
+    .date-badge .dd{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:#fff;line-height:1;}
+    .date-badge .dl{font-size:.72rem;color:rgba(255,255,255,.6);margin-top:.3rem;}
+    .date-badge .df{margin-top:.75rem;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-weight:800;font-size:.7rem;padding:.3rem .8rem;border-radius:4px;letter-spacing:.08em;}
+
+    /* MARQUEE */
+    .marquee-wrap{background:var(--gold);overflow:hidden;padding:.75rem 0;border-top:2px solid rgba(255,255,255,.15);border-bottom:2px solid rgba(255,255,255,.15);}
+    .marquee-track{display:flex;animation:mq 24s linear infinite;width:max-content;}
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .mq-item{display:inline-flex;align-items:center;gap:.6rem;padding:0 2.5rem;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;color:var(--navy);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+    .mq-item i{font-size:.6rem;opacity:.55;}
+
+    /* EYEBROW */
+    .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;}
+    .eyebrow::before{content:'';display:block;width:22px;height:1.5px;background:var(--teal);}
+    .eyebrow.gold{color:var(--gold);}
+    .eyebrow.gold::before{background:var(--gold);}
+
+    /* EMOTION */
+    .sect-emotion{padding:7rem 0;background:linear-gradient(160deg,#071529 0%,#0d2035 50%,#071b30 100%);position:relative;overflow:hidden;}
+    .sect-emotion::before{content:'';position:absolute;left:-200px;bottom:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(63,207,189,.06) 0%,transparent 65%);}
+    .emotion-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:center;position:relative;z-index:1;}
+    .emotion-left h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:#fff;margin-bottom:1.5rem;font-weight:900;}
+    .emotion-left h2 em{color:var(--teal);font-style:italic;}
+    .egraf{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.85;margin-bottom:1rem;}
+    .egraf strong{color:#fff;}
+    .egraf .gt{color:var(--gold);font-weight:600;}
+    .pull-quote{margin-top:2.5rem;padding:1.5rem 2rem;border-left:3px solid var(--gold);background:rgba(245,166,35,.07);border-radius:0 var(--rx) var(--rx) 0;}
+    .pull-quote p{font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.65;}
+    .mosaic{display:grid;grid-template-columns:1.2fr 1fr;grid-template-rows:280px 160px;gap:12px;position:relative;}
+    .mosaic-img{border-radius:var(--rxl);overflow:hidden;position:relative;}
+    .mosaic-img:nth-child(1){grid-row:span 2;}
+    .mosaic-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+    .mosaic-img:hover img{transform:scale(1.04);}
+    .mosaic-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,21,41,.5) 100%);border-radius:var(--rxl);pointer-events:none;}
+    .mosaic-badge{position:absolute;bottom:-16px;right:-16px;z-index:5;background:var(--teal);color:var(--navy);font-family:'Syne',sans-serif;font-weight:800;font-size:.78rem;padding:.9rem 1.4rem;border-radius:var(--rxl);text-align:center;box-shadow:0 8px 32px rgba(63,207,189,.4);}
+    .mosaic-badge .big{font-size:1.8rem;display:block;line-height:1;}
+
+    /* GAINS */
+    .sect-gains{background:#fff;padding:6rem 0;}
+    .s-head{text-align:center;margin-bottom:3.5rem;}
+    .s-head h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;}
+    .gains-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    .gain-card{border:1px solid var(--w-border);border-radius:var(--rxll);overflow:hidden;transition:transform .3s,box-shadow .3s;background:#fff;}
+    .gain-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(11,31,58,.12);}
+    .gc-top{height:8px;}
+    .gc-top.teal{background:linear-gradient(90deg,var(--teal),#56dece);}
+    .gc-top.gold{background:linear-gradient(90deg,var(--gold),#f7c55f);}
+    .gc-top.navy{background:linear-gradient(90deg,var(--navy),#1a3a6a);}
+    .gc-body{padding:2rem;}
+    .gc-num{font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:900;line-height:1;opacity:.06;color:var(--navy);margin-bottom:-.8rem;}
+    .gc-icon{width:50px;height:50px;border-radius:var(--rx);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1rem;}
+    .gc-icon.teal{background:rgba(63,207,189,.12);color:var(--teal-dark);}
+    .gc-icon.gold{background:rgba(245,166,35,.12);color:#b87300;}
+    .gc-icon.navy{background:rgba(11,31,58,.08);color:var(--navy);}
+    .gc-body h4{color:var(--w-text);font-size:1rem;margin-bottom:.5rem;}
+    .gc-body p{font-size:.86rem;color:var(--w-muted);line-height:1.7;}
+    .bonus-strip{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+    .bonus-tile{background:var(--navy);border-radius:var(--rxl);padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:.75rem;border:1px solid rgba(63,207,189,.15);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+    .bonus-tile:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(11,31,58,.3);}
+    .bonus-tile::before{content:'';position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;opacity:.08;}
+    .bonus-tile:nth-child(1)::before{background:#a064dc;}
+    .bonus-tile:nth-child(2)::before{background:var(--teal);}
+    .bonus-tile:nth-child(3)::before{background:#f0728a;}
+    .bi{width:44px;height:44px;border-radius:var(--rx);display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .bi.purple{background:rgba(160,100,220,.2);color:#c57aff;}
+    .bi.teal{background:rgba(63,207,189,.15);color:var(--teal);}
+    .bi.rose{background:rgba(240,114,138,.15);color:#f0728a;}
+    .bonus-tile h5{font-family:'Syne',sans-serif;font-size:.9rem;color:#fff;}
+    .bonus-tile p{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.6;}
+    .bonus-cost{font-size:.72rem;color:var(--gold);font-weight:700;}
+
+    /* DETAILS BAR */
+    .details-bar{background:rgba(7,21,41,.97);border-top:1px solid rgba(63,207,189,.1);border-bottom:1px solid rgba(63,207,189,.1);padding:2.5rem 0;}
+    .drow{display:flex;flex-wrap:wrap;justify-content:center;gap:0;}
+    .di{display:flex;align-items:center;gap:1rem;padding:.75rem 2.5rem;border-right:1px solid rgba(255,255,255,.07);}
+    .di:last-child{border-right:none;}
+    .di i{font-size:1.3rem;color:var(--teal);}
+    .dl{font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:.15rem;}
+    .dv{font-family:'Syne',sans-serif;font-size:.92rem;font-weight:700;color:#fff;}
+    .dv.gold{color:var(--gold);}
+
+    /* IMPACT */
+    .sect-impact{padding:6rem 0;background:linear-gradient(135deg,var(--navy) 0%,#0f2744 100%);position:relative;overflow:hidden;}
+    .sect-impact::after{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,166,35,.06) 0%,transparent 70%);}
+    .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1;}
+    .impact-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;color:#fff;margin-bottom:1rem;}
+    .impact-text h2 em{font-style:italic;color:var(--gold);}
+    .impact-text p{color:rgba(255,255,255,.7);margin-bottom:2rem;line-height:1.8;}
+    .check-list{list-style:none;display:flex;flex-direction:column;gap:.8rem;}
+    .check-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9rem;color:rgba(255,255,255,.8);}
+    .check-list li i{color:var(--teal);margin-top:.2rem;flex-shrink:0;}
+    .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .stat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--rxl);padding:1.75rem;text-align:center;transition:border-color .2s,background .2s;}
+    .stat-card:hover{background:rgba(63,207,189,.06);border-color:rgba(63,207,189,.25);}
+    .stat-n{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--teal);}
+    .stat-l{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.25rem;}
+
+    /* FORM */
+    .sect-form{padding:7rem 0;background:linear-gradient(160deg,#071529 0%,#0b1e35 100%);position:relative;overflow:hidden;}
+    .sect-form::before{content:'';position:absolute;right:-200px;bottom:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(63,207,189,.05) 0%,transparent 65%);}
+    .form-wrapper{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;position:relative;z-index:1;}
+    .form-intro h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;color:#fff;margin-bottom:1rem;}
+    .form-intro h2 em{font-style:italic;color:var(--gold);}
+    .form-intro>p{color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:2rem;font-size:.95rem;}
+    .promise-box{background:rgba(63,207,189,.07);border:1px solid rgba(63,207,189,.2);border-radius:var(--rxll);padding:1.5rem 2rem;margin-bottom:1.5rem;}
+    .promise-box h5{font-family:'Syne',sans-serif;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;}
+    .pi{display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:rgba(255,255,255,.7);margin-bottom:.6rem;}
+    .pi i{color:var(--teal);}
+    .urgency-box{background:rgba(245,166,35,.08);border:1px solid rgba(245,166,35,.25);border-radius:var(--rxl);padding:1.25rem 1.5rem;}
+    .urgency-box .ut{font-family:'Syne',sans-serif;font-weight:700;font-size:.82rem;color:var(--gold);margin-bottom:.3rem;}
+    .urgency-box p{font-size:.82rem;color:rgba(255,255,255,.65);}
+    .form-card{background:#fff;border-radius:var(--rxll);box-shadow:0 32px 100px rgba(7,21,41,.45);overflow:hidden;}
+    .form-bar{height:4px;background:linear-gradient(90deg,var(--teal),var(--gold),transparent);}
+    .form-body{padding:2.5rem;}
+    .form-body h3{color:var(--w-text);margin-bottom:.2rem;font-size:1.3rem;}
+    .form-sub{font-size:.82rem;color:var(--w-muted);margin-bottom:2rem;}
+    .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .fg{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem;}
+    .fg label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--w-muted);}
+    .fg input,.fg select,.fg textarea{padding:.75rem 1rem;border:1.5px solid var(--w-border);border-radius:var(--rx);font-family:'DM Sans',sans-serif;font-size:.88rem;color:var(--w-text);background:var(--w-bg);outline:none;transition:border-color .2s,box-shadow .2s;}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(63,207,189,.12);}
+    .fg textarea{min-height:100px;resize:vertical;}
+    .fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A6A7A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:2.5rem;}
+    .submit-btn{width:100%;padding:1.05rem;background:var(--gold);color:var(--navy);font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;border:none;border-radius:var(--rx);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:.6rem;letter-spacing:.04em;transition:background .2s,transform .2s,box-shadow .2s;margin-top:.5rem;}
+    .submit-btn:hover{background:#f7bc48;transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,166,35,.4);}
+    .form-note{text-align:center;font-size:.75rem;color:var(--w-muted);margin-top:.75rem;}
+    .form-note i{color:var(--teal);}
+    .success-state{display:none;padding:3rem 2.5rem;text-align:center;}
+    .success-ring{width:72px;height:72px;background:rgba(63,207,189,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:2rem;color:var(--teal);}
+    .success-state h4{color:var(--w-text);margin-bottom:.5rem;font-size:1.2rem;}
+    .success-state p{color:var(--w-muted);font-size:.88rem;}
+
+    /* CLOSING */
+    .sect-closing{padding:5rem 0;background:var(--teal-dark);position:relative;overflow:hidden;}
+    .sect-closing::before{content:'"';font-family:'Playfair Display',serif;font-size:28rem;font-weight:900;color:rgba(255,255,255,.04);position:absolute;top:-4rem;left:-2rem;line-height:1;pointer-events:none;}
+    .closing-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+    .closing-inner blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,3vw,1.8rem);font-weight:700;font-style:italic;color:#fff;line-height:1.65;margin-bottom:1.5rem;}
+    .closing-inner cite{font-size:.8rem;color:rgba(255,255,255,.65);letter-spacing:.1em;font-style:normal;}
+    .closing-cta{margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+
+    /* FOOTER */
+    .footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.05);padding:4rem 0 2rem;}
+    .footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+    .footer-brand .f-tag{color:var(--teal);font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;margin:.75rem 0 .4rem;}
+    .footer-brand .f-desc{font-size:.8rem;color:rgba(255,255,255,.45);}
+    .footer-col h5{font-family:'Syne',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.12em;margin-bottom:1rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+    .footer-col li,.footer-col li a{font-size:.82rem;color:rgba(255,255,255,.55);transition:color .2s;}
+    .footer-col li a:hover{color:var(--teal);}
+    .footer-bot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);font-size:.78rem;color:rgba(255,255,255,.3);}
+    .footer-leg{display:flex;gap:1.5rem;}
+    .footer-leg a{color:rgba(255,255,255,.3);transition:color .2s;}
+    .footer-leg a:hover{color:var(--teal);}
+
+    @media(max-width:960px){.emotion-inner,.impact-grid,.form-wrapper{grid-template-columns:1fr;gap:3rem;}.date-badge{display:none;}.footer-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:700px){.gains-grid,.bonus-strip,.stat-grid{grid-template-columns:1fr;}.di{padding:.75rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}.di:last-child{border-bottom:none;}.drow{flex-direction:column;align-items:center;}.frow{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.slider-arrow{display:none;}}
+  </style>
+</head>
+<body>
+
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="curRing"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-in">
+    <a href="/" class="logo">
+      <img src="images/logo.png" class="logo-img" alt="Linnexus" onerror="this.style.display='none'" />
+      <span class="logo-text">LINNEXUS</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about">Who We Are</a></li>
+      <li><a href="services">What We Do</a></li>
+      <li><a href="approach">Our Approach</a></li>
+      <li><a href="partners">Partners</a></li>
+      <li><a href="insight">Insights</a></li>
+      <li><a href="#register" class="nav-cta">Register Free</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenu">
+  <ul>
+    <li><a href="about">Who We Are</a></li>
+    <li><a href="services">What We Do</a></li>
+    <li><a href="approach">Our Approach</a></li>
+    <li><a href="partners">Partners</a></li>
+    <li><a href="insight">Insights</a></li>
+    <li><a href="#register">Register Free</a></li>
+  </ul>
+</div>
+
+<!-- CINEMATIC SLIDER -->
+<div class="slider" id="heroSlider">
+
+  <!-- Slide 1 -->
+  <div class="slide active" id="slide-0">
+    <img class="slide-img" src="/images/teacher2.jpg" alt="Teacher helping students" />
+    <div class="slide-overlay"></div>
+    <div class="slide-accent"></div>
+    <div class="slide-content">
+      <div class="slide-eyebrow">Linnexus Educator Empowerment Program &nbsp;·&nbsp; Free Virtual Training</div>
+      <h1 class="slide-headline">
+        The Classroom<br/>
+        Deserves a Teacher<br/>
+        <em>Who Is Whole.</em>
+      </h1>
+      <p class="slide-body">You show up every single day — for your students, their growth, their future. Now it's your turn to be equipped, empowered, and celebrated.</p>
+      <div class="slide-btns">
+        <a href="#register" class="btn btn-gold"><i class="fa-solid fa-bolt"></i> Secure Your Free Spot</a>
+        <a href="#what-you-gain" class="btn btn-ghost">See What's Included</a>
+      </div>
+    </div>
+    <div class="date-badge">
+      <div class="dm">May · 2026</div>
+      <div class="dd">1</div>
+      <div class="dl">Friday · Virtual</div>
+      <div class="df">100% FREE</div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" id="slide-1">
+    <img class="slide-img" src="/images/teacher1.jpg" alt="Confident African educator" />
+    <div class="slide-overlay"></div>
+    <div class="slide-accent"></div>
+    <div class="slide-content">
+      <div class="slide-eyebrow">Sponsored by Linnexus Digital Solutions &nbsp;·&nbsp; AI for African Educators</div>
+      <h1 class="slide-headline">
+        AI Is Changing<br/>
+        <em>Everything.</em><br/>
+        <span class="gw">Will You Lead?</span>
+      </h1>
+      <p class="slide-body">Master AI tools built specifically for educators. Save hours every week on lesson planning, teaching tasks, and classroom productivity — starting this Friday.</p>
+      <div class="slide-btns">
+        <a href="#register" class="btn btn-gold"><i class="fa-solid fa-robot"></i> Join the Training</a>
+        <a href="#emotion" class="btn btn-ghost">Read Our Story</a>
+      </div>
+    </div>
+  </div>
+
+  <button class="slider-arrow prev" id="slidePrev"><i class="fa-solid fa-chevron-left"></i></button>
+  <button class="slider-arrow next" id="slideNext"><i class="fa-solid fa-chevron-right"></i></button>
+  <div class="slider-ui">
+    <div class="slide-counter"><span id="slideNum">01</span> / 02</div>
+    <div class="slider-dots">
+      <div class="dot active" data-idx="0"></div>
+      <div class="dot" data-idx="1"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="mq-item"><i class="fa-solid fa-star"></i>Free Virtual Training</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Friday 1st May 2026</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>AI Tools for Educators</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Emotional Intelligence</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>50 Free ChatGPT Prompts</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Eduaide AI Pro Access</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>E-Certificate Included</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Limited Slots Only</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>Free Virtual Training</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Friday 1st May 2026</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>AI Tools for Educators</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Emotional Intelligence</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>50 Free ChatGPT Prompts</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Eduaide AI Pro Access</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>E-Certificate Included</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Limited Slots Only</span>
+  </div>
+</div>
+
+<!-- EMOTION -->
+<section class="sect-emotion" id="emotion">
+  <div class="wrap">
+    <div class="emotion-inner">
+      <div class="emotion-left">
+        <div class="eyebrow">For Every Teacher Who Shows Up</div>
+        <h2>You Are Carrying<br/><em>More Than a Lesson Plan.</em></h2>
+        <p class="egraf">Teachers carry <strong>students' struggles, side hustles, family pressures,</strong> personal matters — and are still expected to show up and deliver excellence.</p>
+        <p class="egraf"><span class="gt">Teachers, take your flowers… you are trying.</span></p>
+        <p class="egraf">But what if you had a <strong>personal AI assistant built specially for teachers?</strong> Ready-made prompts for lesson planning, teaching tasks, and productivity?</p>
+        <p class="egraf">And what about your mental health — <span class="gt">the part nobody puts on the timetable?</span> Because when a teacher is mentally drained, everything feels heavier. But when a teacher is supported, confidence returns, energy improves, and the classroom feels lighter again.</p>
+        <div class="pull-quote">
+          <p>"That is why this workshop was created — for you. A practical and refreshing session on AI tools for educators, emotional intelligence, and smarter teaching support. <strong style="color:#fff;">Totally free.</strong>"</p>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <a href="#register" class="btn btn-teal"><i class="fa-solid fa-arrow-right"></i> Register — It's Free</a>
+        </div>
+      </div>
+      <div style="position:relative;">
+        <div class="mosaic">
+          <div class="mosaic-img"><img src="/images/teacher2.jpg" alt="Teacher with students" /></div>
+          <div class="mosaic-img"><img src="/images/teacher1.jpg" alt="Professional educator" /></div>
+          <div class="mosaic-img" style="background:linear-gradient(135deg,var(--teal-dark),var(--navy));display:flex;align-items:center;justify-content:center;padding:1.5rem;">
+            <div style="text-align:center;">
+              <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#fff;line-height:1;">Free</div>
+              <div style="font-family:'Syne',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:.4rem;">Sponsored by<br/>Linnexus &amp; Eduaide</div>
+            </div>
+          </div>
+        </div>
+        <div class="mosaic-badge"><span class="big">1st</span>May 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAINS -->
+<section class="sect-gains" id="what-you-gain">
+  <div class="wrap">
+    <div class="s-head">
+      <div class="eyebrow" style="color:var(--teal-dark);justify-content:center;">What You Will Gain</div>
+      <h2 style="color:var(--w-text);">Three Pillars for the <em style="color:var(--teal-dark);font-style:italic;">Whole Teacher</em></h2>
+      <p style="color:var(--w-muted);max-width:540px;margin:.75rem auto 0;font-size:.95rem;">Skills, mindset, and mental wellness — because a supported teacher transforms classrooms.</p>
+    </div>
+    <div class="gains-grid">
+      <div class="gain-card">
+        <div class="gc-top teal"></div>
+        <div class="gc-body">
+          <div class="gc-num">01</div>
+          <div class="gc-icon teal"><i class="fa-solid fa-robot"></i></div>
+          <h4>AI for Educators</h4>
+          <p>Learn practical ways to use AI tools for lesson planning, teaching support, and productivity. Your very own AI-powered personal assistant — built for the classroom.</p>
+        </div>
+      </div>
+      <div class="gain-card">
+        <div class="gc-top gold"></div>
+        <div class="gc-body">
+          <div class="gc-num">02</div>
+          <div class="gc-icon gold"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h4>Emotional Intelligence</h4>
+          <p>Build self-awareness, manage stress, and improve teacher–student relationships. Because the part nobody puts on the timetable matters most.</p>
+        </div>
+      </div>
+      <div class="gain-card">
+        <div class="gc-top navy"></div>
+        <div class="gc-body">
+          <div class="gc-num">03</div>
+          <div class="gc-icon navy"><i class="fa-solid fa-people-group"></i></div>
+          <h4>Capacity. Confidence. Impact.</h4>
+          <p>Equip yourself with skills that improve your effectiveness and influence as an educator — so you walk back into that classroom feeling ready.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin:3.5rem 0 1.5rem;">
+      <div class="eyebrow" style="color:var(--navy);justify-content:center;">You Also Walk Away With</div>
+      <h3 style="color:var(--w-text);font-family:'Playfair Display',serif;font-size:1.8rem;">Sponsored Bonuses — All Free</h3>
+    </div>
+    <div class="bonus-strip">
+      <div class="bonus-tile">
+        <div class="bi purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h5>Eduaide AI Pro Access</h5>
+        <p>A premium AI toolkit designed specifically for teachers — free access sponsored by Eduaide.</p>
+      </div>
+      <div class="bonus-tile">
+        <div class="bi teal"><i class="fa-brands fa-openai"></i></div>
+        <h5>50 Free ChatGPT Prompts</h5>
+        <p>Ready-to-use classroom prompts to save hours every week and boost your teaching immediately.</p>
+      </div>
+      <div class="bonus-tile">
+        <div class="bi rose"><i class="fa-solid fa-certificate"></i></div>
+        <h5>E-Certificate of Participation</h5>
+        <p>A valuable certificate to recognise your learning, growth, and commitment to excellence.</p>
+        <div class="bonus-cost"><i class="fa-solid fa-tag"></i> Valued at ₦1,000 — free for all attendees</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS BAR -->
+<div class="details-bar">
+  <div class="wrap">
+    <div class="drow">
+      <div class="di"><i class="fa-solid fa-calendar-days"></i><div><div class="dl">Date</div><div class="dv gold">Friday, 1st May 2026</div></div></div>
+      <div class="di"><i class="fa-solid fa-clock"></i><div><div class="dl">Time</div><div class="dv">Sent to registered participants</div></div></div>
+      <div class="di"><i class="fa-solid fa-laptop-code"></i><div><div class="dl">Mode</div><div class="dv">Virtual Sessions</div></div></div>
+      <div class="di"><i class="fa-solid fa-users"></i><div><div class="dl">Who Can Join</div><div class="dv">All Teachers &amp; Educators</div></div></div>
+      <div class="di"><i class="fa-solid fa-naira-sign"></i><div><div class="dl">Cost</div><div class="dv gold">Totally Free</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- IMPACT -->
+<section class="sect-impact">
+  <div class="wrap">
+    <div class="impact-grid">
+      <div class="impact-text">
+        <div class="eyebrow gold">Sponsored · Mission-Driven</div>
+        <h2>Support Has <em>Got You</em> Too.</h2>
+        <p>This is a 100% free training, sponsored by Linnexus Digital Solutions Nig Ltd, with AI tools access sponsored by Eduaide. World-class resources — given freely to Nigeria's educators.</p>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check-circle"></i> Practical AI tools you can use the very next class</li>
+          <li><i class="fa-solid fa-check-circle"></i> Mental wellness strategies that fit a teacher's real life</li>
+          <li><i class="fa-solid fa-check-circle"></i> A community of educators growing together across Nigeria</li>
+          <li><i class="fa-solid fa-check-circle"></i> Global AI toolkits made accessible for African educators</li>
+          <li><i class="fa-solid fa-check-circle"></i> A certificate that proves your commitment to growth</li>
+        </ul>
+        <div style="margin-top:2.5rem;">
+          <a href="#register" class="btn btn-teal" style="font-size:1rem;padding:1rem 2.5rem;"><i class="fa-solid fa-arrow-right"></i> Register Now — It's Free</a>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-n">Free</div><div class="stat-l">100% No Cost Training</div></div>
+        <div class="stat-card"><div class="stat-n">50+</div><div class="stat-l">AI Prompts for Teachers</div></div>
+        <div class="stat-card"><div class="stat-n">3</div><div class="stat-l">Powerful Learning Pillars</div></div>
+        <div class="stat-card"><div class="stat-n">1 Day</div><div class="stat-l">That Could Change Everything</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="sect-form" id="register">
+  <div class="wrap">
+    <div class="s-head" style="margin-bottom:4rem;">
+      <div class="eyebrow" style="justify-content:center;">Limited Slots Available</div>
+      <h2 style="font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3.5vw,2.8rem);">Claim Your <em style="color:var(--gold);">Free Spot</em> Today</h2>
+      <p style="color:rgba(255,255,255,.65);max-width:520px;margin:.75rem auto 0;">Fill in your details and we'll send your participation details directly to your inbox.</p>
+    </div>
+    <div class="form-wrapper">
+      <div class="form-intro">
+        <div class="eyebrow">Why Register?</div>
+        <h2>You Deserve <em>This.</em></h2>
+        <p>A rare opportunity — world-class AI and emotional intelligence training, completely free, as a thank-you to Nigeria's educators.</p>
+        <div class="promise-box">
+          <h5><i class="fa-solid fa-shield-halved" style="margin-right:.4rem;"></i>What We Promise</h5>
+          <div class="pi"><i class="fa-solid fa-check"></i> 100% free — no hidden fees ever</div>
+          <div class="pi"><i class="fa-solid fa-check"></i> Your data is private and protected</div>
+          <div class="pi"><i class="fa-solid fa-check"></i> Session link emailed directly to you</div>
+          <div class="pi"><i class="fa-solid fa-check"></i> Certificate delivered after attendance</div>
+          <div class="pi"><i class="fa-solid fa-check"></i> Eduaide Pro access sponsored &amp; included</div>
+        </div>
+        <div class="urgency-box">
+          <div class="ut"><i class="fa-solid fa-fire-flame-curved" style="margin-right:.4rem;"></i>Hurry — Slots Are Filling Fast</div>
+          <p>Register now to guarantee your place at this free virtual training on Friday 1st May 2026.</p>
+        </div>
+      </div>
+      <div class="form-card">
+        <div class="form-bar"></div>
+        <div class="form-body">
+          <div id="formArea">
+            <h3>Register for the Program</h3>
+            <p class="form-sub">Complete the form below. Participation details will be sent to your inbox.</p>
+            <form id="regForm" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="697a81b8-bcf2-4e8c-8171-80571e51bcf9" />
+              <input type="hidden" name="subject" value="New Registration – Educator Empowerment Program" />
+              <input type="hidden" name="from_name" value="Linnexus Educator Program" />
+              <div class="frow">
+                <div class="fg"><label>Full Name *</label><input type="text" name="name" placeholder="Your full name" required /></div>
+                <div class="fg"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+234 ..." required /></div>
+              </div>
+              <div class="fg"><label>Email Address *</label><input type="email" name="email" placeholder="you@email.com" required /></div>
+              <div class="frow">
+                <div class="fg"><label>School / Organisation *</label><input type="text" name="organisation" placeholder="Your school or institution" required /></div>
+                <div class="fg"><label>State *</label>
+                  <select name="state" required>
+                    <option value="" disabled selected>Select state</option>
+                    <option>Lagos</option><option>Abuja (FCT)</option><option>Kano</option>
+                    <option>Rivers</option><option>Oyo</option><option>Ogun</option>
+                    <option>Anambra</option><option>Enugu</option><option>Kaduna</option>
+                    <option>Delta</option><option>Edo</option><option>Imo</option>
+                    <option>Cross River</option><option>Benue</option><option>Kwara</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="fg"><label>Your Role *</label>
+                <select name="role" required>
+                  <option value="" disabled selected>Select your role</option>
+                  <option>Primary School Teacher</option>
+                  <option>Secondary School Teacher</option>
+                  <option>Tertiary Institution Lecturer</option>
+                  <option>School Administrator / Principal</option>
+                  <option>Special Education Teacher</option>
+                  <option>Curriculum Developer</option>
+                  <option>Other Educator</option>
+                </select>
+              </div>
+              <div class="fg"><label>What do you hope to gain?</label>
+                <textarea name="message" placeholder="Tell us briefly what you're looking forward to..."></textarea>
+              </div>
+              <button type="submit" class="submit-btn"><i class="fa-solid fa-bolt"></i> Secure My Free Spot Now</button>
+              <p class="form-note"><i class="fa-solid fa-lock"></i> Your info is safe. No spam, ever.</p>
+            </form>
+          </div>
+          <div class="success-state" id="successState">
+            <div class="success-ring"><i class="fa-solid fa-circle-check"></i></div>
+            <h4>You're In! 🎉</h4>
+            <p>Thank you for registering for the Educator Empowerment Program. Check your inbox — your participation details are on their way.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="sect-closing">
+  <div class="wrap">
+    <div class="closing-inner">
+      <blockquote>"You've got this. And this time, support has got you too."</blockquote>
+      <cite>— Linnexus Digital Solutions Nig Ltd &nbsp;·&nbsp; Innovate. Educate. Elevate.</cite>
+      <div class="closing-cta">
+        <a href="#register" class="btn" style="background:#fff;color:var(--teal-dark);font-family:'Syne',sans-serif;font-weight:700;"><i class="fa-solid fa-bolt"></i> Register Now — It's Free</a>
+        <a href="contact" class="btn btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff;">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <img src="images/logo.png" class="logo-img" alt="Linnexus" style="filter:brightness(0) invert(1);" onerror="this.style.display='none'" />
+          <span>LINNEXUS</span>
+        </a>
+        <p class="f-tag">Responsible AI. Real Results.</p>
+        <p class="f-desc">Helping organizations across Nigeria and Africa adopt AI responsibly.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about">Who We Are</a></li>
+          <li><a href="services">What We Do</a></li>
+          <li><a href="approach">Our Approach</a></li>
+          <li><a href="partners">Partnerships</a></li>
+          <li><a href="insight">Insights</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services">AI Ethics Education</a></li>
+          <li><a href="services">Business Transformation</a></li>
+          <li><a href="services">Ethics &amp; Governance</a></li>
+          <li><a href="services">Technology Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:info@linnexus.com">info@linnexus.com</a></li>
+          <li><a href="tel:+2348163452701">+234 816 345 2701</a></li>
+          <li>Nigeria</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>&copy; 2026 Linnexus Digital Solutions Nig Ltd. All rights reserved.</p>
+      <div class="footer-leg"><a href="privacy">Privacy Policy</a><a href="terms">Terms of Use</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor
+  const cur=document.getElementById('cur'),curR=document.getElementById('curRing');
+  document.addEventListener('mousemove',e=>{
+    cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+    setTimeout(()=>{curR.style.left=e.clientX+'px';curR.style.top=e.clientY+'px';},60);
+  });
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cur.style.width='18px';cur.style.height='18px';curR.style.width='52px';curR.style.height='52px';});
+    el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';curR.style.width='36px';curR.style.height='36px';});
+  });
+
+  // Mobile menu
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobMenu').classList.toggle('open'));
+  document.querySelectorAll('#mobMenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mobMenu').classList.remove('open')));
+
+  // Slider
+  let cur2=0;
+  const slides=document.querySelectorAll('.slide'),dots=document.querySelectorAll('.dot'),numEl=document.getElementById('slideNum');
+  function goTo(i){
+    slides[cur2].classList.remove('active');slides[cur2].classList.add('prev');
+    setTimeout(()=>slides[cur2].classList.remove('prev'),1300);
+    cur2=i;slides[cur2].classList.add('active');
+    dots.forEach((d,j)=>d.classList.toggle('active',j===cur2));
+    numEl.textContent=String(cur2+1).padStart(2,'0');
+  }
+  document.getElementById('slideNext').addEventListener('click',()=>goTo((cur2+1)%slides.length));
+  document.getElementById('slidePrev').addEventListener('click',()=>goTo((cur2-1+slides.length)%slides.length));
+  dots.forEach(d=>d.addEventListener('click',()=>goTo(+d.dataset.idx)));
+  let tmr=setInterval(()=>goTo((cur2+1)%slides.length),6000);
+  const sl=document.getElementById('heroSlider');
+  sl.addEventListener('mouseenter',()=>clearInterval(tmr));
+  sl.addEventListener('mouseleave',()=>{tmr=setInterval(()=>goTo((cur2+1)%slides.length),6000);});
+
+  // Form
+  document.getElementById('regForm').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn=e.target.querySelector('.submit-btn');
+    btn.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+    btn.disabled=true;
+    try{
+      const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(e.target)});
+      const json=await res.json();
+      if(json.success){document.getElementById('formArea').style.display='none';document.getElementById('successState').style.display='block';}
+      else throw new Error();
+    }catch{
+      btn.innerHTML='<i class="fa-solid fa-bolt"></i> Secure My Free Spot Now';
+      btn.disabled=false;
+      alert('Something went wrong. Please email info@linnexus.com to register.');
+    }
+  });
+</script>
+</body>
+</html>
