@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Educator Empowerment Program – Linnexus Digital Solutions</title>
+  <title>The Education Intelligence Summit – Linnexus Digital Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
@@ -59,8 +59,8 @@
     .slide-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;transform:translateY(20px);transition:opacity .7s .3s,transform .7s .3s;}
     .slide-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold);}
     .slide.active .slide-eyebrow{opacity:1;transform:translateY(0);}
-    .slide-headline{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,4rem);font-weight:900;line-height:1.1;color:#fff;max-width:760px;margin-bottom:1.5rem;opacity:0;transform:translateY(30px);transition:opacity .8s .5s,transform .8s .5s;}
-    @media(max-width:768px){ .slide-headline{font-size:clamp(1.5rem,7vw,2.5rem);} }
+    .slide-headline{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.8vw,2.4rem);font-weight:900;line-height:1.15;color:#fff;max-width:760px;margin-bottom:1.2rem;opacity:0;transform:translateY(30px);transition:opacity .8s .5s,transform .8s .5s;}
+    @media(max-width:768px){ .slide-headline{font-size:clamp(1.1rem,5vw,1.8rem);} }
     .slide.active .slide-headline{opacity:1;transform:translateY(0);}
     .slide-headline em{font-style:italic;color:var(--teal);}
     .slide-headline .gw{color:var(--gold);}
@@ -81,8 +81,8 @@
     .slider-dots{display:flex;gap:.5rem;}
     .dot{width:28px;height:3px;background:rgba(255,255,255,.25);border-radius:2px;cursor:pointer;transition:background .3s,width .3s;}
     .dot.active{background:var(--gold);width:44px;}
-    .slider-arrow{position:absolute;top:50%;z-index:10;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:background .2s,border-color .2s;backdrop-filter:blur(6px);}
-    .slider-arrow:hover{background:rgba(245,166,35,.2);border-color:var(--gold);color:var(--gold);}
+    .slider-arrow{position:absolute;top:50%;z-index:10;transform:translateY(-50%);width:56px;height:56px;border-radius:50%;background:rgba(7,21,41,.55);border:1.5px solid rgba(255,255,255,.3);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all .3s var(--ease);backdrop-filter:blur(10px);box-shadow:0 4px 20px rgba(0,0,0,.35);}
+    .slider-arrow:hover{background:rgba(245,166,35,.25);border-color:var(--gold);color:var(--gold);transform:translateY(-50%) scale(1.08);box-shadow:0 8px 28px rgba(245,166,35,.3);}
     .slider-arrow.prev{left:2rem;}
     .slider-arrow.next{right:2rem;}
     .date-badge{position:absolute;top:38%;right:7%;background:rgba(7,21,41,.85);border:1px solid rgba(245,166,35,.4);backdrop-filter:blur(12px);border-radius:var(--rxll);padding:1.5rem 2rem;z-index:5;text-align:center;animation:floatBadge 4s ease-in-out infinite;}
@@ -243,7 +243,7 @@
     .footer-leg a:hover{color:var(--teal);}
 
     @media(max-width:960px){.emotion-inner,.impact-grid,.form-wrapper{grid-template-columns:1fr;gap:3rem;}.date-badge{display:none;}.footer-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:700px){.gains-grid,.bonus-strip,.stat-grid{grid-template-columns:1fr;}.di{padding:.75rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}.di:last-child{border-bottom:none;}.drow{flex-direction:column;align-items:center;}.frow{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.slider-arrow{display:none;}}
+    @media(max-width:700px){.gains-grid,.bonus-strip,.stat-grid{grid-template-columns:1fr;}.di{padding:.75rem 1.5rem;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}.di:last-child{border-bottom:none;}.drow{flex-direction:column;align-items:center;}.frow{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.slider-arrow{width:40px;height:40px;font-size:.85rem;}.slider-arrow.prev{left:.75rem;}.slider-arrow.next{right:.75rem;}}
   </style>
 </head>
 <body>
@@ -285,37 +285,37 @@
 
   <!-- Slide 1 -->
   <div class="slide active" id="slide-0">
-    <img class="slide-img" src="/images/teacher2.jpg" alt="Teacher helping students" />
+    <img class="slide-img" src="images/teacher2.jpg" alt="Education Intelligence Summit" />
     <div class="slide-overlay"></div>
     <div class="slide-accent"></div>
     <div class="slide-content">
-      <div class="slide-eyebrow">Linnexus Educator Empowerment Program &nbsp;·&nbsp; Free Virtual Training</div>
+      <div class="slide-eyebrow">Linnexus Digital Solutions &nbsp;·&nbsp; Education Intelligence Summit</div>
       <h1 class="slide-headline">
-        The Classroom<br/>
-        Deserves a Teacher<br/>
-        <em>Who Is Whole.</em>
+        The Education<br/>
+        <em>Intelligence Summit</em><br/>
+        <span class="gw">ERA — The Era of Intelligence in Education</span>
       </h1>
-      <p class="slide-body">You show up every single day — for your students, their growth, their future. Now it's your turn to be equipped, empowered, and celebrated.</p>
+      <p class="slide-body">A landmark summit exploring how AI is transforming education — equipping educators, leaders, and institutions for the era of intelligence. 21st May 2026 · 10am · Ayo Kehinde Hall, Bukuru, Jos.</p>
       <div class="slide-btns">
-        <a href="#register" class="btn btn-gold"><i class="fa-solid fa-bolt"></i> Secure Your Free Spot</a>
+        <a href="#register" class="btn btn-gold"><i class="fa-solid fa-bolt"></i> Register Now</a>
         <a href="#what-you-gain" class="btn btn-ghost">See What's Included</a>
       </div>
     </div>
     <div class="date-badge">
       <div class="dm">May · 2026</div>
-      <div class="dd">1</div>
-      <div class="dl">Friday · Virtual</div>
-      <div class="df">100% FREE</div>
+      <div class="dd">21</div>
+      <div class="dl">Thursday · 10am · Jos</div>
+      <div class="df">SUMMIT</div>
     </div>
   </div>
 
   <!-- Slide 2 -->
   <div class="slide" id="slide-1">
-    <img class="slide-img" src="/images/teacher1.jpg" alt="Confident African educator" />
+    <img class="slide-img" src="images/teacher1.jpg" alt="Confident African educator" />
     <div class="slide-overlay"></div>
     <div class="slide-accent"></div>
     <div class="slide-content">
-      <div class="slide-eyebrow">Sponsored by Linnexus Digital Solutions &nbsp;·&nbsp; AI for African Educators</div>
+
       <h1 class="slide-headline">
         AI Is Changing<br/>
         <em>Everything.</em><br/>
@@ -343,20 +343,20 @@
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="mq-item"><i class="fa-solid fa-star"></i>Free Virtual Training</span>
-    <span class="mq-item"><i class="fa-solid fa-circle"></i>Friday 1st May 2026</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>Education Intelligence Summit</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Thursday 21st May 2026</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>Theme: ERA — The Era of Intelligence in Education</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>10am · Ayo Kehinde Hall, Jos</span>
     <span class="mq-item"><i class="fa-solid fa-star"></i>AI Tools for Educators</span>
-    <span class="mq-item"><i class="fa-solid fa-circle"></i>Emotional Intelligence</span>
-    <span class="mq-item"><i class="fa-solid fa-star"></i>50 Free ChatGPT Prompts</span>
-    <span class="mq-item"><i class="fa-solid fa-circle"></i>Eduaide AI Pro Access</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Corona Private School, Bukuru</span>
     <span class="mq-item"><i class="fa-solid fa-star"></i>E-Certificate Included</span>
     <span class="mq-item"><i class="fa-solid fa-circle"></i>Limited Slots Only</span>
-    <span class="mq-item"><i class="fa-solid fa-star"></i>Free Virtual Training</span>
-    <span class="mq-item"><i class="fa-solid fa-circle"></i>Friday 1st May 2026</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>Education Intelligence Summit</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Thursday 21st May 2026</span>
+    <span class="mq-item"><i class="fa-solid fa-star"></i>Theme: ERA — The Era of Intelligence in Education</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>10am · Ayo Kehinde Hall, Jos</span>
     <span class="mq-item"><i class="fa-solid fa-star"></i>AI Tools for Educators</span>
-    <span class="mq-item"><i class="fa-solid fa-circle"></i>Emotional Intelligence</span>
-    <span class="mq-item"><i class="fa-solid fa-star"></i>50 Free ChatGPT Prompts</span>
-    <span class="mq-item"><i class="fa-solid fa-circle"></i>Eduaide AI Pro Access</span>
+    <span class="mq-item"><i class="fa-solid fa-circle"></i>Corona Private School, Bukuru</span>
     <span class="mq-item"><i class="fa-solid fa-star"></i>E-Certificate Included</span>
     <span class="mq-item"><i class="fa-solid fa-circle"></i>Limited Slots Only</span>
   </div>
@@ -382,8 +382,8 @@
       </div>
       <div style="position:relative;">
         <div class="mosaic">
-          <div class="mosaic-img"><img src="/images/teacher2.jpg" alt="Teacher with students" /></div>
-          <div class="mosaic-img"><img src="/images/teacher1.jpg" alt="Professional educator" /></div>
+          <div class="mosaic-img"><img src="images/teacher2.jpg" alt="Teacher with students" /></div>
+          <div class="mosaic-img"><img src="images/teacher1.jpg" alt="Professional educator" /></div>
           <div class="mosaic-img" style="background:linear-gradient(135deg,var(--teal-dark),var(--navy));display:flex;align-items:center;justify-content:center;padding:1.5rem;">
             <div style="text-align:center;">
               <div style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#fff;line-height:1;">Free</div>
@@ -391,7 +391,7 @@
             </div>
           </div>
         </div>
-        <div class="mosaic-badge"><span class="big">1st</span>May 2026</div>
+        <div class="mosaic-badge"><span class="big">21st</span>May 2026</div>
       </div>
     </div>
   </div>
@@ -463,11 +463,11 @@
 <div class="details-bar">
   <div class="wrap">
     <div class="drow">
-      <div class="di"><i class="fa-solid fa-calendar-days"></i><div><div class="dl">Date</div><div class="dv gold">Friday, 1st May 2026</div></div></div>
-      <div class="di"><i class="fa-solid fa-clock"></i><div><div class="dl">Time</div><div class="dv">Sent to registered participants</div></div></div>
-      <div class="di"><i class="fa-solid fa-laptop-code"></i><div><div class="dl">Mode</div><div class="dv">Virtual Sessions</div></div></div>
+      <div class="di"><i class="fa-solid fa-calendar-days"></i><div><div class="dl">Date</div><div class="dv gold">Thursday, 21st May 2026</div></div></div>
+      <div class="di"><i class="fa-solid fa-clock"></i><div><div class="dl">Time</div><div class="dv">10:00 AM</div></div></div>
+      <div class="di"><i class="fa-solid fa-location-dot"></i><div><div class="dl">Venue</div><div class="dv">Ayo Kehinde Hall, Corona Private School</div></div></div>
+      <div class="di"><i class="fa-solid fa-map-pin"></i><div><div class="dl">Address</div><div class="dv">Little Rayfield, Bukuru, Jos</div></div></div>
       <div class="di"><i class="fa-solid fa-users"></i><div><div class="dl">Who Can Join</div><div class="dv">All Teachers &amp; Educators</div></div></div>
-      <div class="di"><i class="fa-solid fa-naira-sign"></i><div><div class="dl">Cost</div><div class="dv gold">Totally Free</div></div></div>
     </div>
   </div>
 </div>
@@ -524,7 +524,7 @@
         </div>
         <div class="urgency-box">
           <div class="ut"><i class="fa-solid fa-fire-flame-curved" style="margin-right:.4rem;"></i>Hurry — Slots Are Filling Fast</div>
-          <p>Register now to guarantee your place at this free virtual training on Friday 1st May 2026.</p>
+          <p>Register now to secure your place at the Education Intelligence Summit on Thursday 21st May 2026, 10am — Ayo Kehinde Hall, Bukuru, Jos.</p>
         </div>
       </div>
       <div class="form-card">
